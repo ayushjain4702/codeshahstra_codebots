@@ -67,40 +67,7 @@ const VerifyEmployee = () => {
               </button> */}
             </div>
           </div>
-          <div className="flex-1 items-center justify-between space-y-5">
-            <h1 className="mb-2  text-lg font-bold text-slate-500">
-              Upload Aadhar
-            </h1>
-            <div className="flex flex-col">
-              <label
-                htmlFor="image-upload-2"
-                className="mx-auto mb-4 w-fit cursor-pointer rounded-lg bg-blue-200 px-3 py-1 text-lg hover:bg-blue-100"
-              >
-                Select Image
-              </label>
-              <input
-                id="image-upload-2"
-                type="file"
-                accept="image/*"
-                onChange={handleImageChange2}
-                className="hidden"
-              />
-              {selectedImage2 && (
-                <img
-                  src={selectedImage2}
-                  alt="Selected"
-                  className="mb-4 h-50 w-auto object-contain"
-                />
-              )}
-              {!selectedImage2 && <div className="h-50"></div>}
-              {/* <button
-                type="submit"
-                className="rounded bg-blue-300 py-2 px-4 text-lg font-bold text-white hover:bg-blue-500"
-              >
-                Upload
-              </button> */}
-            </div>
-          </div>
+          <div className="flex-1 items-center justify-between space-y-5"></div>
         </div>
         <button
           type="submit"
