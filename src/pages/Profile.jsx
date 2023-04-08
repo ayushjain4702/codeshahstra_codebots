@@ -1,7 +1,7 @@
 import React from 'react';
 import DefaultLayout from '../layout/DefaultLayout';
 import Breadcrumb from '../components/Breadcrumb';
-import CoverOne from '../images/cover/cover-01.png'
+import CoverOne from '../images/cover/cover-02.jpeg'
 import userSix from '../images/user/user-06.png'
 
 const Profile = () => {
