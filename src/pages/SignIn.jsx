@@ -1,5 +1,5 @@
-import React, { useState, useEffect, useContext } from 'react';
-import {useNavigate} from "react-router-dom"
+import React, { useState, useEffect, useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import { appContext } from "../context";
 import AuthServices from "../services/AuthServices";
 import DefaultLayout from "../layout/DefaultLayout";
@@ -27,7 +27,7 @@ const SignIn = () => {
   console.log(json);
   const handleClick = async (e) => {
     e.preventDefault();
-    console.log("button pressed!")
+    console.log("button pressed!");
     setLoad(true);
     await AuthServices.login(json)
       .then((res) => {
@@ -49,17 +49,17 @@ const SignIn = () => {
     }
   }, [navigate]);
   return (
-    <div className="border-strok h-screen rounded-sm border bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
+    <div className="relative h-screen shadow-default dark:bg-boxdark">
       <div className="flex flex-wrap items-center">
-        <div className="hidden w-full xl:block xl:w-2/3">
+        <div className="w-full">
           <div className="h-full w-full">
-            <div className="relative h-screen w-full bg-black">
-              <div className="absolute left-0 h-full w-10">
-                <img
+            <div className="h-screen w-full bg-black">
+              <div className="">
+                {/* <img
                   className="absolute top-70 bottom-0 -rotate-90"
                   src={logo}
                   alt="Hero"
-                />
+                /> */}
               </div>
               <img
                 className="h-full w-full object-cover opacity-40"
@@ -72,8 +72,8 @@ const SignIn = () => {
         </div>
         {/* <button className="h-50 bg-black">show</button> */}
 
-        <div className="border-strok w-full bg-blue-100 dark:border-strokedark xl:w-1/3 xl:border-l-2">
-          <div className="h-screen w-full p-4 sm:p-12.5 xl:p-17.5">
+        <div className="border-strok absolute left-[50%] w-[70vh] bg-blue-100 dark:border-strokedark xl:border-l-2">
+          <div className="mx-auto h-fit w-full p-10">
             <h2 className="mb-9 text-2xl font-bold text-black dark:text-white sm:text-title-xl2">
               Sign In
             </h2>
@@ -85,7 +85,7 @@ const SignIn = () => {
                 </label>
                 <div className="relative">
                   <input
-                  name="email"
+                    name="email"
                     type="email"
                     placeholder="Enter your email"
                     onChange={handleChange}
@@ -118,7 +118,7 @@ const SignIn = () => {
                 </label>
                 <div className="relative">
                   <input
-                  name='password'
+                    name="password"
                     type="password"
                     placeholder="6+ Characters, 1 Capital letter"
                     onChange={handleChange}
@@ -194,7 +194,7 @@ const SignIn = () => {
                 Sign in with Google
               </button>
 
-              <div  className="mt-6 text-center">
+              <div className="mt-6 text-center">
                 <p>
                   Don’t have any account?{" "}
                   <Link to="/signup" className="text-primary">
