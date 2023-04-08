@@ -1,6 +1,6 @@
 const express = require('express');
 const { protect, admin } = require('../controllers/authentiController');
-const { create,readById,update,myUsers,login } = require('../controllers/clientController');
+const { create,readById,update,login } = require('../controllers/clientController');
 
 const router = express.Router();
 
@@ -10,7 +10,6 @@ router.route('/login').post(login)
 router.use(protect);
 router.route('/mydetails').get(readById)
 router.route('/update').put(update);
-router.route('/myUsers').get(myUsers)
 // router.route('/:id').delete(remove).get(readById); // api/v1/operator/634635687367
 
 module.exports = router;

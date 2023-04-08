@@ -5,7 +5,7 @@ const Client  = require('../database/models/client.model');
 const User = require('../database/schemas/user.schema');
 const _Error = require('../lib/utils/_error');
 
-module.exports.addEmployee-catcher(async (req,res)=>{
+module.exports.addEmployee=catcher(async (req,res)=>{
     const client = await Client.findById(req.client)
     
     let user = await User.findById(req.body.id);

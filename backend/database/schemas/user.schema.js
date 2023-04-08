@@ -16,6 +16,14 @@ const userSchema = new Schema(
     name:String,
     dob:String,
     email:String,
+
+    gender:String,
+    aadharNum:String,
+    address:String,
+    maskedMobileNum:String,
+
+    age:String,
+
   },
   { timestamps: true }
 );
