@@ -26,7 +26,6 @@ module.exports.create = catcher(async (req, res, next) => {
     clientName,
     email,
     password,
-    gstNumber,
     address,
   });
   await client.save();

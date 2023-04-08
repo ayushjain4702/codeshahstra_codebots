@@ -247,7 +247,48 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
                 </NavLink>
               </li>
               {/* <!-- Menu Item Profile --> */}
-
+              <li>
+                <NavLink
+                  to="/verifyEmp"
+                  className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${
+                    pathname.includes("verifyEmp") &&
+                    "bg-graydark dark:bg-meta-4"
+                  }`}
+                >
+                  Verify Employee
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/docUpload"
+                  className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${
+                    pathname.includes("docUpload") &&
+                    "bg-graydark dark:bg-meta-4"
+                  }`}
+                >
+                  Upload Documents
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/myEmp"
+                  className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${
+                    pathname.includes("myEmp") && "bg-graydark dark:bg-meta-4"
+                  }`}
+                >
+                  My Employees
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/reportEmp"
+                  className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${
+                    pathname.includes("myEmp") && "bg-graydark dark:bg-meta-4"
+                  }`}
+                >
+                  Report Employees
+                </NavLink>
+              </li>
               {/* <!-- Menu Item Forms --> */}
               <SidebarLinkGroup
                 activeCondition={
@@ -436,6 +477,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
                   Settings
                 </NavLink>
               </li>
+
               {/* <!-- Menu Item Settings --> */}
             </ul>
           </div>

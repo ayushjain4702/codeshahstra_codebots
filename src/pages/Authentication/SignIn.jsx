@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useState, useEffect, useContext } from 'react';
+import { appContext } from "../../context";
+import AuthServices from "../services/AuthServices";
 import DefaultLayout from '../../layout/DefaultLayout';
 import Breadcrumb from '../../components/Breadcrumb';
 import Logo from '../../images/logo/logo.svg'
@@ -6,6 +8,35 @@ import LogoDark from '../../images/logo/logo-dark.svg'
 import { Link } from 'react-router-dom'
 
 const SignIn = () => {
+  let navigate = useNavigate();
+  const { setToken, token } = useContext(appContext);
+  const [load, setLoad] = useState(false);
+  const [json, setJson] = useState({
+    email: "",
+    password: "",
+  });
+  const handleClick = async () => {
+    setLoad(true);
+    await AuthServices.login(json)
+      .then((res) => {
+        setLoad(false);
+        console.log(res);
+        setToken(res.data.data.token);
+        localStorage.setItem("appToken", res.data.data.token);
+        setUser(res.data.data.user);
+        localStorage.setItem("appUser", JSON.stringify(res.data.data.user));
+        localStorage.setItem("isAuthorized", true);
+        navigate("/committee");
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+  };
+  useEffect(() => {
+    if (localStorage.getItem("isAuthorized")) {
+      navigate("/");
+    }
+  }, [navigate]);
   return (
     <DefaultLayout>
       <Breadcrumb pageName='Sign In' />
