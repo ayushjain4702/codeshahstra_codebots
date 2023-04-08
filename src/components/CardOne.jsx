@@ -3,8 +3,8 @@ import React from 'react';
 const CardOne = () => {
   return (
     <div className='rounded-sm border border-stroke bg-white py-6 px-7.5 shadow-default dark:border-strokedark dark:bg-boxdark'>
-      <div className='flex h-11.5 w-11.5 items-center justify-center rounded-full bg-meta-2 dark:bg-meta-4'>
-        <svg
+      <div className='flex h-11.5 w-11.5 items-center justify-center rounded-full bg-red-500 dark:bg-red-500'>
+        {/* <svg
           className='fill-primary dark:fill-white'
           width='22'
           height='16'
@@ -20,19 +20,24 @@ const CardOne = () => {
             d='M11 10.9219C9.38438 10.9219 8.07812 9.61562 8.07812 8C8.07812 6.38438 9.38438 5.07812 11 5.07812C12.6156 5.07812 13.9219 6.38438 13.9219 8C13.9219 9.61562 12.6156 10.9219 11 10.9219ZM11 6.625C10.2437 6.625 9.625 7.24375 9.625 8C9.625 8.75625 10.2437 9.375 11 9.375C11.7563 9.375 12.375 8.75625 12.375 8C12.375 7.24375 11.7563 6.625 11 6.625Z'
             fill=''
           />
-        </svg>
+        </svg> */}
+
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 text-white">
+          <path fill-rule="evenodd" d="M3 2.25a.75.75 0 01.75.75v.54l1.838-.46a9.75 9.75 0 016.725.738l.108.054a8.25 8.25 0 005.58.652l3.109-.732a.75.75 0 01.917.81 47.784 47.784 0 00.005 10.337.75.75 0 01-.574.812l-3.114.733a9.75 9.75 0 01-6.594-.77l-.108-.054a8.25 8.25 0 00-5.69-.625l-2.202.55V21a.75.75 0 01-1.5 0V3A.75.75 0 013 2.25z" clip-rule="evenodd" />
+      </svg>
+
       </div>
 
       <div className='mt-4 flex items-end justify-between'>
         <div>
-          <h4 className='text-title-md font-bold text-black dark:text-white'>
-            $3.456K
+          <h4 className='text-title-md2 font-bold text-black dark:text-white'>
+            15
           </h4>
-          <span className='text-sm font-medium'>Total views</span>
+          <span className='text-sm font-medium'>Red Flags</span>
         </div>
 
         <span className='flex items-center gap-1 text-sm font-medium text-meta-3'>
-          0.43%
+          3.50%
           <svg
             className='fill-meta-3'
             width='10'

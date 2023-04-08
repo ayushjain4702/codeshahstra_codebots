@@ -133,11 +133,11 @@ const ChatCard = () => {
 
           <div className='flex flex-1 items-center justify-between'>
             <div>
-              <h5 className='font-medium'>Wilium Smith</h5>
+              <h5 className='font-medium'>Jack Hardy</h5>
               <p>
                 <span className='text-sm'>Where are you now?</span>
-                <span className='text-xs'> . Sep 20</span>
-              </p>
+                <span className='text-xs'> . Sep 22</span>
+              </p>  
             </div>
           </div>
         </a>

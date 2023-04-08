@@ -3,8 +3,8 @@ import React from 'react';
 const CardFour = () => {
   return (
     <div className='rounded-sm border border-stroke bg-white py-6 px-7.5 shadow-default dark:border-strokedark dark:bg-boxdark'>
-      <div className='flex h-11.5 w-11.5 items-center justify-center rounded-full bg-meta-2 dark:bg-meta-4'>
-        <svg
+      <div className='flex h-11.5 w-11.5 items-center justify-center rounded-full bg-green-500 dark:bg-green-500'>
+        {/* <svg
           className='fill-primary dark:fill-white'
           width='22'
           height='18'
@@ -24,21 +24,24 @@ const CardFour = () => {
             d='M15.9843 10.0313H15.6749C14.6437 10.0313 13.6468 10.3406 12.7874 10.8563C11.8593 9.61876 10.3812 8.79376 8.73115 8.79376H5.67178C2.85303 8.82814 0.618652 11.0625 0.618652 13.8469V16.3219C0.618652 16.975 1.13428 17.4906 1.7874 17.4906H20.2468C20.8999 17.4906 21.4499 16.9406 21.4499 16.2875V15.4625C21.4155 12.4719 18.9749 10.0313 15.9843 10.0313ZM2.16553 15.9438V13.8469C2.16553 11.9219 3.74678 10.3406 5.67178 10.3406H8.73115C10.6562 10.3406 12.2374 11.9219 12.2374 13.8469V15.9438H2.16553V15.9438ZM19.8687 15.9438H13.7499V13.8469C13.7499 13.2969 13.6468 12.7469 13.4749 12.2313C14.0937 11.7844 14.8499 11.5781 15.6405 11.5781H15.9499C18.0812 11.5781 19.8343 13.3313 19.8343 15.4625V15.9438H19.8687Z'
             fill=''
           />
-        </svg>
+        </svg> */}
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 text-white">
+          <path fill-rule="evenodd" d="M3 2.25a.75.75 0 01.75.75v.54l1.838-.46a9.75 9.75 0 016.725.738l.108.054a8.25 8.25 0 005.58.652l3.109-.732a.75.75 0 01.917.81 47.784 47.784 0 00.005 10.337.75.75 0 01-.574.812l-3.114.733a9.75 9.75 0 01-6.594-.77l-.108-.054a8.25 8.25 0 00-5.69-.625l-2.202.55V21a.75.75 0 01-1.5 0V3A.75.75 0 013 2.25z" clip-rule="evenodd" />
+      </svg>
       </div>
 
       <div className='mt-4 flex items-end justify-between'>
         <div>
           <h4 className='text-title-md font-bold text-black dark:text-white'>
-            3.456
+            76
           </h4>
-          <span className='text-sm font-medium'>Total Users</span>
+          <span className='text-sm font-medium'>Green Flags</span>
         </div>
 
-        <span className='flex items-center gap-1 text-sm font-medium text-meta-5'>
-          0.95%
+        <span className='flex items-center gap-1 text-sm font-medium text-red-500'>
+          3.75%
           <svg
-            className='fill-meta-5'
+            className='fill-red-500'
             width='10'
             height='11'
             viewBox='0 0 10 11'

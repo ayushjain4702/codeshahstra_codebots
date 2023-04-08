@@ -3,8 +3,8 @@ import React from 'react';
 const CardThree = () => {
   return (
     <div className='rounded-sm border border-stroke bg-white py-6 px-7.5 shadow-default dark:border-strokedark dark:bg-boxdark'>
-      <div className='flex h-11.5 w-11.5 items-center justify-center rounded-full bg-meta-2 dark:bg-meta-4'>
-        <svg
+      <div className='flex h-11.5 w-11.5 items-center justify-center rounded-full bg-yellow-500 dark:bg-yellow-400'>
+        {/* <svg
           className='fill-primary dark:fill-white'
           width='22'
           height='22'
@@ -20,19 +20,22 @@ const CardThree = () => {
             d='M14.3345 5.29375C13.922 5.39688 13.647 5.80938 13.7501 6.22188C13.7845 6.42813 13.8189 6.63438 13.8189 6.80625C13.8189 8.35313 12.547 9.625 11.0001 9.625C9.45327 9.625 8.1814 8.35313 8.1814 6.80625C8.1814 6.6 8.21577 6.42813 8.25015 6.22188C8.35327 5.80938 8.07827 5.39688 7.66577 5.29375C7.25327 5.19063 6.84077 5.46563 6.73765 5.87813C6.6689 6.1875 6.63452 6.49688 6.63452 6.80625C6.63452 9.2125 8.5939 11.1719 11.0001 11.1719C13.4064 11.1719 15.3658 9.2125 15.3658 6.80625C15.3658 6.49688 15.3314 6.1875 15.2626 5.87813C15.1595 5.46563 14.747 5.225 14.3345 5.29375Z'
             fill=''
           />
+        </svg> */}
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 text-white">
+          <path fill-rule="evenodd" d="M3 2.25a.75.75 0 01.75.75v.54l1.838-.46a9.75 9.75 0 016.725.738l.108.054a8.25 8.25 0 005.58.652l3.109-.732a.75.75 0 01.917.81 47.784 47.784 0 00.005 10.337.75.75 0 01-.574.812l-3.114.733a9.75 9.75 0 01-6.594-.77l-.108-.054a8.25 8.25 0 00-5.69-.625l-2.202.55V21a.75.75 0 01-1.5 0V3A.75.75 0 013 2.25z" clip-rule="evenodd" />
         </svg>
       </div>
 
       <div className='mt-4 flex items-end justify-between'>
         <div>
           <h4 className='text-title-md font-bold text-black dark:text-white'>
-            2.450
+            36
           </h4>
-          <span className='text-sm font-medium'>Total Product</span>
+          <span className='text-sm font-medium'>Orange Flags</span>
         </div>
 
         <span className='flex items-center gap-1 text-sm font-medium text-meta-3'>
-          2.59%
+          9.65%
           <svg
             className='fill-meta-3'
             width='10'
