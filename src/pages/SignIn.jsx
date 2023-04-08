@@ -1,4 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useContext } from 'react';
+import {useNavigate} from "react-router-dom"
+import { appContext } from "../context";
+import AuthServices from "../services/AuthServices";
 import DefaultLayout from "../layout/DefaultLayout";
 import Breadcrumb from "../components/Breadcrumb";
 import { Link } from "react-router-dom";
@@ -8,6 +11,43 @@ import logo from "../images/logo/logov.png";
 import Cover from "../images/cover/cover-hero2.jpg";
 
 const SignIn = () => {
+  let navigate = useNavigate();
+  const [token, setToken] = useState("");
+  const [load, setLoad] = useState(false);
+  const [json, setJson] = useState({
+    email: "",
+    password: "",
+  });
+  const handleChange = (e) => {
+    const name = e.target.name;
+    const value = e.target.value;
+    setJson({ ...json, [name]: value });
+  };
+
+  console.log(json);
+  const handleClick = async (e) => {
+    e.preventDefault();
+    console.log("button pressed!")
+    setLoad(true);
+    await AuthServices.login(json)
+      .then((res) => {
+        setLoad(false);
+        console.log(res);
+        console.log(res.data.data.token);
+        setToken(res.data.data.token);
+        localStorage.setItem("appToken", res.data.data.token);
+        localStorage.setItem("isAuthorized", true);
+        navigate("/dashboard");
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+  };
+  useEffect(() => {
+    if (localStorage.getItem("isAuthorized")) {
+      navigate("/dashboard");
+    }
+  }, [navigate]);
   return (
     <div className="border-strok h-screen rounded-sm border bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
       <div className="flex flex-wrap items-center">
@@ -45,8 +85,10 @@ const SignIn = () => {
                 </label>
                 <div className="relative">
                   <input
+                  name="email"
                     type="email"
                     placeholder="Enter your email"
+                    onChange={handleChange}
                     className="bg-transpare w-full rounded-lg border border-stroke py-4 pl-6 pr-10 outline-none focus:border-primary focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
                   />
 
@@ -76,8 +118,10 @@ const SignIn = () => {
                 </label>
                 <div className="relative">
                   <input
+                  name='password'
                     type="password"
                     placeholder="6+ Characters, 1 Capital letter"
+                    onChange={handleChange}
                     className="bg-transparen w-full rounded-lg border border-stroke py-4 pl-6 pr-10 outline-none focus:border-primary focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
                   />
 
@@ -105,7 +149,7 @@ const SignIn = () => {
                 </div>
               </div>
 
-              <div className="mb-5">
+              <div onClick={handleClick} className="mb-5">
                 <input
                   type="submit"
                   value="Sign In"
@@ -150,7 +194,7 @@ const SignIn = () => {
                 Sign in with Google
               </button>
 
-              <div className="mt-6 text-center">
+              <div  className="mt-6 text-center">
                 <p>
                   Don’t have any account?{" "}
                   <Link to="/signup" className="text-primary">

@@ -1,4 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useContext } from 'react';
+import {useNavigate} from "react-router-dom";
+import { appContext } from "../context";
+import AuthServices from "../services/AuthServices";
 import DefaultLayout from "../layout/DefaultLayout";
 import Breadcrumb from "../components/Breadcrumb";
 import { Link } from "react-router-dom";
@@ -8,6 +11,39 @@ import logo from "../images/logo/logov.png";
 import Cover from "../images/cover/cover-hero2.jpg";
 
 const SignUp = () => {
+  let navigate = useNavigate();
+  const [token, setToken] = useState("");
+  const [authEmail, setAuthEmail] = useState();
+  const [tempToken, setTempToken] = useState();
+  const [load, setLoad] = useState(false);
+  const [json, setJson] = useState({
+    name: "",
+    email: "",
+    password: "",
+  });
+
+  const handleChange = (e) => {
+    const name = e.target.name;
+    const value = e.target.value;
+    setJson({ ...json, [name]: value });
+  };
+
+  const handleClick = async (e) => {
+    e.preventDefault();
+    setLoad(true);
+    await AuthServices.signup(json).then((res) => {
+      setLoad(false);
+      setTempToken(res.data.data.token);
+      setAuthEmail(res.data.data.authEmailId);
+      console.log(res);
+      navigate('/signin')
+    });
+  };
+  // useEffect(() => {
+  //   if(localStorage.getItem('isAuthorized')){
+  //     navigate('/signin')
+  //   }
+  // }, [navigate])
   return (
     <div className="border-strok h-screen rounded-sm border bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
       <div className="flex flex-wrap items-center">
@@ -45,8 +81,10 @@ const SignUp = () => {
                 </label>
                 <div className="relative">
                   <input
+                  name="name"
                     type="string"
                     placeholder="Enter your Name"
+                    onChange={handleChange}
                     className="bg-transpare w-full rounded-lg border border-stroke py-4 pl-6 pr-10 outline-none focus:border-primary focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
                   />
 
@@ -75,8 +113,10 @@ const SignUp = () => {
                 </label>
                 <div className="relative">
                   <input
+                  name="email"
                     type="email"
                     placeholder="Enter your email"
+                    onChange={handleChange}
                     className="bg-transpare w-full rounded-lg border border-stroke py-4 pl-6 pr-10 outline-none focus:border-primary focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
                   />
 
@@ -106,8 +146,10 @@ const SignUp = () => {
                 </label>
                 <div className="relative">
                   <input
+                  name="password"
                     type="password"
                     placeholder="6+ Characters, 1 Capital letter"
+                    onChange={handleChange}
                     className="bg-transparen w-full rounded-lg border border-stroke py-4 pl-6 pr-10 outline-none focus:border-primary focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
                   />
 
@@ -135,7 +177,7 @@ const SignUp = () => {
                 </div>
               </div>
 
-              <div className="mb-5">
+              <div onClick={handleClick} className="mb-5">
                 <input
                   type="submit"
                   value="Sign Up"
