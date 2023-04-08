@@ -14,6 +14,9 @@ import SignIn from "./pages/Authentication/SignIn";
 import SignUp from "./pages/Authentication/SignUp";
 import AddEmployee from "./pages/AddEmployee";
 import VerifyEmployee from "./pages/VerifyEmployee";
+import Home from "./pages/Home";
+import MyEmployees from "./pages/MyEmployees";
+import ReportEmployees from "./pages/ReportEmployee";
 
 const App = () => {
   const [loading, setLoading] = useState(true);
@@ -38,6 +41,9 @@ const App = () => {
           <Route exact path="/" element={<Analytics />} />
           <Route path="/calendar" element={<Calendar />} />
           <Route path="/addEmp" element={<AddEmployee />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/myEmp" element={<MyEmployees />} />
+          <Route path="/reportEmp" element={<ReportEmployees />} />
           <Route path="/verifyEmp" element={<VerifyEmployee />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/forms/form-elements" element={<FormElements />} />

@@ -1,86 +1,115 @@
 import React, { useState } from "react";
 import DefaultLayout from "../layout/DefaultLayout";
 import Breadcrumb from "../components/Breadcrumb";
+import axios from "axios";
 
 const VerifyEmployee = () => {
   const [selectedImage, setSelectedImage] = useState(null);
   const [selectedImage2, setSelectedImage2] = useState(null);
 
-  function handleImageChange(event) {
-    setSelectedImage(URL.createObjectURL(event.target.files[0]));
-  }
-  function handleImageChange2(event) {
-    setSelectedImage2(URL.createObjectURL(event.target.files[1]));
-  }
+  const handleImageChange = (e) => {
+    setSelectedImage(URL.createObjectURL(e.target.files[0]));
+  };
 
+  const handleImageChange2 = (e) => {
+    setSelectedImage2(URL.createObjectURL(e.target.files[0]));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    // Add code to handle form submission here
+    const formData = new FormData();
+    formData.append("id_proof", selectedImage2);
+    formData.append("face_image", selectedImage);
+
+    const { data } = await axios.post(
+      "http://99ab-34-90-64-81.ngrok-free.app/validate",
+      formData
+    );
+    console.log(data);
+  };
   return (
     <DefaultLayout>
       <Breadcrumb pageName="Verify Employee" />
-      <div className="flex flex-wrap">
-        <div className="flex-1 items-center justify-between">
-          <h1 className="mb-7 mt-10 text-xl font-bold text-black">
-            Upload Your Image
-          </h1>
-          <div>
-            <label
-              htmlFor="image-upload"
-              className="mb-4 cursor-pointer rounded-lg bg-blue-100 p-3 text-xl"
-            >
-              Select Image
-            </label>
-            <input
-              id="image-upload"
-              type="file"
-              accept="image/*"
-              onChange={handleImageChange}
-              className="hidden"
-            />
-            {selectedImage && (
-              <img
-                src={selectedImage}
-                alt="Selected"
-                className="mb-4 h-64 w-64 object-contain"
+
+      <form onSubmit={handleSubmit}>
+        <div className="flex flex-wrap">
+          <div className="flex-1 items-center justify-between space-y-5">
+            <h1 className="mb-2  text-lg font-bold text-slate-500">
+              Upload Employee Image
+            </h1>
+            <div className="flex flex-col">
+              <label
+                htmlFor="image-upload-1"
+                className="mx-auto mb-4 w-fit cursor-pointer rounded-lg bg-blue-200 px-3 py-1 text-lg hover:bg-blue-100"
+              >
+                Select Image
+              </label>
+              <input
+                id="image-upload-1"
+                type="file"
+                accept="image/*"
+                onChange={handleImageChange}
+                className="hidden"
               />
-            )}
-            <button className="rounded bg-blue-300 py-2 px-4 text-lg font-bold text-white hover:bg-blue-500">
-              Upload
-            </button>
+              {selectedImage && (
+                <img
+                  src={selectedImage}
+                  alt="Selected"
+                  className="mb-4 h-50 w-auto object-contain"
+                />
+              )}
+              {/* <button
+                type="submit"
+                className="rounded bg-blue-300 py-2 px-4 text-lg font-bold text-white hover:bg-blue-500"
+              >
+                Upload
+              </button> */}
+            </div>
+          </div>
+          <div className="flex-1 items-center justify-between space-y-5">
+            <h1 className="mb-2  text-lg font-bold text-slate-500">
+              Upload Aadhar
+            </h1>
+            <div className="flex flex-col">
+              <label
+                htmlFor="image-upload-2"
+                className="mx-auto mb-4 w-fit cursor-pointer rounded-lg bg-blue-200 px-3 py-1 text-lg hover:bg-blue-100"
+              >
+                Select Image
+              </label>
+              <input
+                id="image-upload-2"
+                type="file"
+                accept="image/*"
+                onChange={handleImageChange2}
+                className="hidden"
+              />
+              {selectedImage2 && (
+                <img
+                  src={selectedImage2}
+                  alt="Selected"
+                  className="mb-4 h-50 w-auto object-contain"
+                />
+              )}
+              {!selectedImage2 && <div className="h-50"></div>}
+              {/* <button
+                type="submit"
+                className="rounded bg-blue-300 py-2 px-4 text-lg font-bold text-white hover:bg-blue-500"
+              >
+                Upload
+              </button> */}
+            </div>
           </div>
         </div>
-        <div className="flex-1 items-center justify-between">
-          <h1 className="mb-7 mt-10 text-xl font-bold text-black">
-            Upload Aadhar
-          </h1>
-          <div>
-            <label
-              htmlFor="image-upload"
-              className="mb-4 cursor-pointer rounded-lg bg-blue-100 p-3 text-xl"
-            >
-              Select Image
-            </label>
-            <input
-              id="image-upload"
-              type="file"
-              accept="image/*"
-              onChange={handleImageChange2}
-              className="hidden"
-            />
-            {selectedImage2 && (
-              <img
-                src={selectedImage2}
-                alt="Selected"
-                className="mb-4 h-64 w-64 object-contain"
-              />
-            )}
-            <button className="rounded bg-blue-300 py-2 px-4 text-lg font-bold text-white hover:bg-blue-500">
-              Upload
-            </button>
-          </div>
-        </div>
-      </div>
-      <button className="mt-5 rounded bg-slate-300 py-2 px-4 text-3xl font-black text-black hover:bg-blue-500">
-        Verify
-      </button>
+        <button
+          type="submit"
+          className="mx-auto mt-5 flex w-2/4 items-center justify-center rounded-xl bg-slate-200 py-2 px-4 text-2xl font-black hover:bg-blue-200"
+        >
+          Verify
+        </button>
+      </form>
+
       {/* <div class="mb-2 md:w-2/4">
         <h2 class="sm:text-3xl text-2xl text-gray-900 font-medium title-font">Tailwind-Alpine File Input Preview</h2>
         <p class="text-slate-400 text-lg font-thin">Show instant thumbnail preview with multiple file support</p>
