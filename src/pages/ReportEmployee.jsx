@@ -8,17 +8,17 @@ const ReportEmployees = () => {
   const cardData = [
     {
       name: "Card 1",
-      description: "Description 1",
+      contact: "Description 1",
       imageUrl: "https://picsum.photos/id/1003/500/300",
     },
     {
       name: "Card 2",
-      description: "Description 2",
+      contact: "Description 2",
       imageUrl: "https://picsum.photos/id/1004/500/300",
     },
     {
       name: "Card 3",
-      description: "Description 3",
+      contact: "Description 3",
       imageUrl: "https://picsum.photos/id/1005/500/300",
     },
   ];
@@ -36,7 +36,7 @@ const ReportEmployees = () => {
     <div>
       <DefaultLayout>
         <Breadcrumb pageName="Report Employees" />
-        <div className="grid grid-cols-1 gap-6">
+        <div className="grid grid-cols-2 gap-6">
           {cardData.map((card) => (
             <ReportCard key={card.name} {...card} />
           ))}

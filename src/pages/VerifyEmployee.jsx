@@ -2,17 +2,13 @@ import React, { useState } from "react";
 import DefaultLayout from "../layout/DefaultLayout";
 import Breadcrumb from "../components/Breadcrumb";
 import axios from "axios";
+import { CloudArrowUpIcon } from "@heroicons/react/24/solid";
 
 const VerifyEmployee = () => {
   const [selectedImage, setSelectedImage] = useState(null);
-  const [selectedImage2, setSelectedImage2] = useState(null);
 
   const handleImageChange = (e) => {
     setSelectedImage(URL.createObjectURL(e.target.files[0]));
-  };
-
-  const handleImageChange2 = (e) => {
-    setSelectedImage2(URL.createObjectURL(e.target.files[0]));
   };
 
   const handleSubmit = async (e) => {
@@ -33,15 +29,15 @@ const VerifyEmployee = () => {
       <Breadcrumb pageName="Verify Employee" />
 
       <form onSubmit={handleSubmit}>
-        <div className="flex flex-wrap">
-          <div className="flex-1 items-center justify-between space-y-5">
+        <div className="">
+          <div className="flex flex-col items-center justify-between space-y-5">
             <h1 className="mb-2  text-lg font-bold text-slate-500">
               Upload Employee Image
             </h1>
             <div className="flex flex-col">
               <label
                 htmlFor="image-upload-1"
-                className="mx-auto mb-4 w-fit cursor-pointer rounded-lg bg-blue-200 px-3 py-1 text-lg hover:bg-blue-100"
+                className="mx-auto mb-4 w-fit cursor-pointer rounded-lg bg-blue-200 px-3 py-1 text-lg hover:bg-blue-100 dark:text-black"
               >
                 Select Image
               </label>
@@ -59,6 +55,11 @@ const VerifyEmployee = () => {
                   className="mb-4 h-50 w-auto object-contain"
                 />
               )}
+              {!selectedImage && (
+                <div className="mx-auto flex h-50 w-[400px] items-center justify-center rounded-xl border border-gray-2 bg-slate-200 dark:bg-slate-700">
+                  <CloudArrowUpIcon className="h-18 w-18" />
+                </div>
+              )}
               {/* <button
                 type="submit"
                 className="rounded bg-blue-300 py-2 px-4 text-lg font-bold text-white hover:bg-blue-500"
@@ -71,7 +72,7 @@ const VerifyEmployee = () => {
         </div>
         <button
           type="submit"
-          className="mx-auto mt-5 flex w-2/4 items-center justify-center rounded-xl bg-slate-200 py-2 px-4 text-2xl font-black hover:bg-blue-200"
+          className="mx-auto mt-10 flex w-1/4 items-center justify-center rounded-xl bg-slate-200 py-2 px-4 text-2xl font-black hover:bg-blue-200 dark:bg-slate-700 dark:text-white"
         >
           Verify
         </button>

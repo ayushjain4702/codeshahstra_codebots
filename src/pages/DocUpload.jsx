@@ -43,7 +43,7 @@ const DocUpload = () => {
             <div className="flex flex-col space-y-10">
               <label
                 htmlFor="image-upload-1"
-                className="mx-auto w-fit cursor-pointer rounded-lg bg-blue-200 px-3 py-1 text-lg hover:bg-blue-100"
+                className="mx-auto w-fit cursor-pointer rounded-lg bg-blue-200 px-3 py-1 text-lg hover:bg-blue-100 dark:text-black"
               >
                 Select Image
               </label>
@@ -62,14 +62,14 @@ const DocUpload = () => {
                 />
               )}
               {!selectedImage && (
-                <div className="mx-auto flex h-50 w-5/6 items-center justify-center rounded-xl border border-gray-2 bg-slate-200">
+                <div className="mx-auto flex h-50 w-5/6 items-center justify-center rounded-xl border border-gray-2 bg-slate-200 dark:bg-slate-700">
                   <CloudArrowUpIcon className="h-18 w-18" />
                 </div>
               )}
 
               <button
                 type="submit"
-                className="mx-auto w-2/3 rounded bg-slate-300 py-2 px-4 text-lg font-bold hover:bg-blue-500"
+                className="mx-auto w-2/3 rounded-lg bg-slate-300 py-2 px-4 text-lg font-bold hover:bg-blue-500 dark:border-white dark:bg-slate-800  dark:hover:bg-slate-600"
               >
                 Verify PAN Card
               </button>
@@ -82,7 +82,7 @@ const DocUpload = () => {
             <div className="flex flex-col space-y-10">
               <label
                 htmlFor="image-upload-2"
-                className="mx-auto w-fit cursor-pointer rounded-lg bg-blue-200 px-3 py-1 text-lg hover:bg-blue-100"
+                className="mx-auto w-fit cursor-pointer rounded-lg bg-blue-200 px-3 py-1 text-lg hover:bg-blue-100 dark:text-black"
               >
                 Select Image
               </label>
@@ -101,13 +101,13 @@ const DocUpload = () => {
                 />
               )}
               {!selectedImage2 && (
-                <div className="mx-auto flex h-50 w-5/6 items-center justify-center rounded-xl border border-gray-2 bg-slate-200">
+                <div className="mx-auto flex h-50 w-5/6 items-center justify-center rounded-xl border border-gray-2 bg-slate-200 dark:bg-slate-700">
                   <CloudArrowUpIcon className="h-18 w-18" />
                 </div>
               )}
               <button
                 type="submit"
-                className="mx-auto w-2/3 rounded bg-slate-300 py-2 px-4 text-lg font-bold hover:bg-blue-500"
+                className="mx-auto w-2/3 rounded-lg bg-slate-300 py-2 px-4 text-lg font-bold hover:bg-blue-500 dark:border-white dark:bg-slate-800  dark:hover:bg-slate-600"
               >
                 Verify Aadhar Card
               </button>
