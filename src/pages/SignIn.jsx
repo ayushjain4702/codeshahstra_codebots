@@ -72,7 +72,7 @@ const SignIn = () => {
         </div>
         {/* <button className="h-50 bg-black">show</button> */}
 
-        <div className="border-strok absolute left-[50%] w-[70vh] bg-blue-100 dark:border-strokedark xl:border-l-2">
+        <div className="border-strok absolute left-[50%] w-[70vh] rounded-lg bg-blue-100 dark:border-strokedark xl:border-l-2">
           <div className="mx-auto h-fit w-full p-10">
             <h2 className="mb-9 text-2xl font-bold text-black dark:text-white sm:text-title-xl2">
               Sign In

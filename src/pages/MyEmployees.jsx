@@ -21,7 +21,7 @@ const MyEmployees = () => {
       imageUrl: "https://picsum.photos/id/1005/500/300",
     },
     {
-      name: "Ayush",
+      name: "Ayushi",
       contact: "Description 3",
       imageUrl: "https://picsum.photos/id/1005/500/300",
     },

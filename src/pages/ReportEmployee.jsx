@@ -22,16 +22,7 @@ const ReportEmployees = () => {
       imageUrl: "https://picsum.photos/id/1005/500/300",
     },
   ];
-  const [del, setDelete] = useState(false);
 
-  const handleDelete = (name) => {
-    setDelete((prev) => {
-      // return prev.map((card) => {
-      //   return card.name === name ? card.on;
-      // });
-      !prev;
-    });
-  };
   return (
     <div>
       <DefaultLayout>

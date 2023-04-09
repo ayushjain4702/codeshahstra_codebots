@@ -9,8 +9,12 @@ import Cover from "../images/cover/cover-hero2.jpg";
 
 const Home = () => {
   return (
-    <div className="h-screen w-full bg-[#000]">
-      <div className="flex">
+    // <div className="h-screen w-full bg-hero bg-cover bg-center bg-no-repeat">
+    <div className="h-screen w-full bg-hero bg-cover bg-center bg-no-repeat">
+      {/* <div className="h-screen w-screen bg-[#000] bg-gradient-to-t from-[#000] via-slate-900 to-transparent bg-cover bg-center bg-no-repeat"> */}
+      {/* <!-- content here -->
+</div> */}
+      <div className="flex bg-gradient-to-l from-[#07030e] via-[#000] to-[#0008]">
         <div className="flex w-2/3 flex-col items-center justify-center">
           <img src={logo} alt="" className="w-[100vh]" />
           <h1 className="mt-5 text-xl text-white">

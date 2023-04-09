@@ -208,6 +208,7 @@ module.exports = {
       },
       backgroundImage: {
         video: "url('../images/video/video.png')",
+        hero: "url('/src/images/cover/cover-hero3.jpg')",
       },
       content: {
         "icon-copy": 'url("../images/icon/icon-copy-alt.svg")',
