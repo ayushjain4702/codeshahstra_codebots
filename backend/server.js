@@ -21,7 +21,7 @@ console.log(Date.now()+3);
 const Main = async () => {
   try {
     await ConnectDB();
-    app.listen(5000, () => {
+    app.listen(5001, () => {
       console.log('Server started on port 5000');
     });
   } catch (error) {
@@ -32,15 +32,15 @@ const Main = async () => {
 Main();
 
 //Multer
-// const multerMid = multer({
-//     storage: multer.memoryStorage(),
-//     limits: {
-//       fileSize: 10 * 1024 * 1024,
-//     },
-//   });
+const multerMid = multer({
+    storage: multer.memoryStorage(),
+    limits: {
+      fileSize: 10 * 1024 * 1024,
+    },
+  });
 
-// app.use(multerMid.single("file"));
-// app.use(multerMid.array("files",5));
+app.use(multerMid.single("file"));
+app.use(multerMid.array("files",5));
 
 app.get('/', (req, res) => {
   res.send('Server for Code Bots');

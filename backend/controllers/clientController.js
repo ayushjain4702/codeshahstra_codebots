@@ -122,15 +122,15 @@ module.exports.update = catcher(async (req, res, next) => {
 });
 
 
-module.exports.myUsers = catcher(async (req, res, next) => {
-  const users = await User.find({
-    clientID: req.client._id,
-  });
-  res.status(200).json({
-    success: true,
-    message: 'Heres the list of all your Users',
-    data:users,
-  });
-});
+// module.exports.myUsers = catcher(async (req, res, next) => {
+//   const users = await User.find({
+//     clientID: req.client._id,
+//   });
+//   res.status(200).json({
+//     success: true,
+//     message: 'Heres the list of all your Users',
+//     data:users,
+//   });
+// });
 
 
