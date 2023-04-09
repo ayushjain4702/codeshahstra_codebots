@@ -18,6 +18,7 @@ module.exports.create = catcher(async (req, res, next) => {
 });
 
 module.exports.createUser = async(data)=>{
+  // if()
   const user = new User({...data})
   await user.save();
   return user

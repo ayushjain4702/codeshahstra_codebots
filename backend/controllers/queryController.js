@@ -1,9 +1,9 @@
 const catcher = require("../lib/utils/catcher");
 const { createUser } = require("./userController");
-
+const axios = require("axios")
 
 module.exports.byFace=catcher(async(req,res)=>{
-    console.log(req.file)
+    // console.log(require("./Images/"+req.body.imagePath))
 
     const { data } = await axios.post("http://localhost:5000/query",req.file)
 
