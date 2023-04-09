@@ -2,7 +2,7 @@ import { TrashIcon } from "@heroicons/react/24/solid";
 import { useState } from "react";
 import Swal from "sweetalert2";
 // const Card = ({ name, del, description, imageUrl }) => {
-const Card = ({ name, contact, imageUrl }) => {
+const Card = ({ name, contact, address, imageUrl }) => {
   const swalWithBootstrapButtons = Swal.mixin({
     customClass: {
       confirmButton: "bg-blue-500 text-white px-3 py-1 rounded-lg ml-3 text-lg",
@@ -58,7 +58,7 @@ const Card = ({ name, contact, imageUrl }) => {
         </p>
         <p className="mt-2 text-lg text-slate-700">
           <span className="text-black">Address : </span>
-          {contact}
+          {address}
         </p>
         <div
           onClick={handleDelete}
