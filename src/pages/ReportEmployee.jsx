@@ -7,19 +7,28 @@ import ReportCard from "../components/ReportCard";
 const ReportEmployees = () => {
   const cardData = [
     {
-      name: "Card 1",
-      contact: "Description 1",
+      name: "Kevin Haria",
+      contact: "+91 9987403395",
+      address: "504 Dr.R.P.Road, Mumbai, India",
+      imageUrl: "https://picsum.photos/id/1001/500/300",
+    },
+    {
+      name: "Jigar Das",
+      contact: "+91 9846483211",
+      address: "A/702, J.N.Road, Pune, India",
+      imageUrl: "https://picsum.photos/id/1002/500/300",
+    },
+    {
+      name: "Ayush Jain",
+      contact: "+91 9876543289",
+      address: "Bhakti Marg, Kolkata, India",
       imageUrl: "https://picsum.photos/id/1003/500/300",
     },
     {
-      name: "Card 2",
-      contact: "Description 2",
+      name: "Devang Shah",
+      contact: "+91 9876533456",
+      address: "409, Chellam Street,  Chennai, India",
       imageUrl: "https://picsum.photos/id/1004/500/300",
-    },
-    {
-      name: "Card 3",
-      contact: "Description 3",
-      imageUrl: "https://picsum.photos/id/1005/500/300",
     },
   ];
 
