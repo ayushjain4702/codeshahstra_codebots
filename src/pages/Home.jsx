@@ -6,11 +6,15 @@ import { Link, NavLink } from "react-router-dom";
 import Hero from "../images/cover/new.gif";
 import logo from "../images/logo/logov.png";
 import Cover from "../images/cover/cover-hero2.jpg";
+import Aboutus from "../components/aboutus";
+
+
 
 const Home = () => {
   return (
-    // <div className="h-screen w-full bg-hero bg-cover bg-center bg-no-repeat">
-    <div className="h-screen w-full bg-hero bg-cover bg-center bg-no-repeat">
+    <div className="h-full flex flex-col">
+    
+    <div className="h-[100vh] w-full bg-hero bg-cover bg-center bg-no-repeat">
       {/* <div className="h-screen w-screen bg-[#000] bg-gradient-to-t from-[#000] via-slate-900 to-transparent bg-cover bg-center bg-no-repeat"> */}
       {/* <!-- content here -->
 </div> */}
@@ -35,6 +39,10 @@ const Home = () => {
           <img src={Hero} alt="Hero" className="h-screen w-full object-cover" />
         </div>
       </div>
+    </div>
+    <div>
+      <Aboutus/>
+    </div>
     </div>
   );
 };
